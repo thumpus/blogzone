@@ -6,11 +6,24 @@
 <h1>{{user.first_name}} {{user.last_name}}</h1>
 <img src = {{user.image_url}} alt = {{user.first_name}} {{user.last_name}}> 
 <br>
+<a href="/users/{{user.id}}/posts/new">
+    <button>Make a Post</button>
+    </a>
+<br>
+<h2>Posts:</h2>
+<ul>
+    {% for post in user.posts %}
+    <li>
+    <a href='/posts/{{post.id}}'>{{post.title}}</a> 
+    <form action = "/posts/{{post.id}}/delete" method="post"><button type ="submit">Delete Post</button></form>
+    </li>
+    {% endfor %}
+</ul>
 <a href="/users/{{user.id}}/edit">
-    <button>Edit</button>
+    <button>Edit User</button>
     </a>
 <form action="/users/{{user.id}}/delete" method ="post">
-    <button type = "submit">Delete</button>
+    <button type = "submit">Delete User</button>
 </form>
 <br>
 <a href="/users">

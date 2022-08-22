@@ -1,0 +1,17 @@
+{% extends 'template.html' %}
+
+{% block title %}the blogz0ne{% endblock %}
+
+{% block content %}
+{% for msg in get_flashed_messages() %}
+    <p> {{ msg }} </p>
+{% endfor %}
+<a href ='/users'>users</a>
+<h1>posts:</h1>
+<ul></ul>
+{% for post in posts %}
+<li><a href='/posts/{{post.id}}'>{{post.title}}</a> by <a href='/users/{{post.user.id}}''>{{post.user.first_name}} {{post.user.last_name}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
