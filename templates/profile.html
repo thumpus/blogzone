@@ -15,6 +15,7 @@
     {% for post in user.posts %}
     <li>
     <a href='/posts/{{post.id}}'>{{post.title}}</a> 
+    <form action = "/posts/{{post.id}}/edit" method="get"><button type ="submit">Edit Post</button></form>
     <form action = "/posts/{{post.id}}/delete" method="post"><button type ="submit">Delete Post</button></form>
     </li>
     {% endfor %}

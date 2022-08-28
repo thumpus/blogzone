@@ -6,11 +6,11 @@
 {% for msg in get_flashed_messages() %}
     <p> {{ msg }} </p>
 {% endfor %}
-<a href ='/users'>users</a>
+<a href ='/users'>users</a> <a href = '/tags'>tags</a>
 <h1>posts:</h1>
-<ul></ul>
+<ul>
 {% for post in posts %}
-<li><a href='/posts/{{post.id}}'>{{post.title}}</a> by <a href='/users/{{post.user.id}}''>{{post.user.first_name}} {{post.user.last_name}}</li>
+<li><a href='/posts/{{post.id}}'>{{post.title}}</a> by <a href='/users/{{post.user.id}}''>{{post.user.first_name}} {{post.user.last_name}}</a></li>
 {% endfor %}
 </ul>
 

@@ -3,7 +3,9 @@
 {% block title %}blogz0ne Users{% endblock %}
 
 {% block content %}
-<a href = '/'>home</a>
+<a href="/users/new">
+    <button>Create User</button>
+    </a>
 <h2>users:</h2>
     <ul>
         {% for user in users %}
@@ -11,7 +13,5 @@
         {% endfor %}
     </ul>
 
-<a href="/users/new">
-<button>Create User</button>
-</a>
+
 {% endblock %}

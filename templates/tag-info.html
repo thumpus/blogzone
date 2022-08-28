@@ -1,0 +1,24 @@
+{% extends 'template.html' %}
+
+{% block title %}{{tag.title}}{% endblock %}
+
+{% block content %}
+<h1>{{tag.name}}</h1>
+<form action="/tags/{{tag.id}}/edit" method ="get">
+    <button type = "submit">Edit Tag</button>
+</form>
+<form action="/tags/{{tag.id}}/delete" method ="post">
+    <button type = "submit">Delete Tag</button>
+</form>
+<h2>posts with this tag:</h2>
+<ul>
+    {% for post in tag.posts %}
+    <li>
+    <a href='/posts/{{post.id}}'>{{post.title}}</a> 
+    </li>
+    {% endfor %}
+</ul> 
+<a href="/tags">
+    <button>Back</button>
+    </a>
+{% endblock %}

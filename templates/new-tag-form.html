@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block title %}New Tag{% endblock %}
+
+{% block content %}
+{% for msg in get_flashed_messages() %}
+    <p> {{ msg }} </p>
+{% endfor %}
+<form method="POST">
+    <h3>Create a Tag</h3>
+    <input type = "text" name="tagname" placeholder="Tag Name"> <br>
+    <input type = "submit" value = "Submit">
+</form> 
+<br>
+<span><a href="/tags">
+    <button>Cancel</button>
+    </a></span>
+
+
+
+{% endblock %}

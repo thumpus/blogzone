@@ -4,8 +4,7 @@
 
 {% block content %}
 <h1>{{post.title}}</h1>
-<h2>Posted by {{post.user.first_name}} {{post.user.last_name}} on {{post.created_at}}</h2>
-<br>
+<h2>Posted by <a href='/users/{{post.user.id}}''>{{post.user.first_name}} {{post.user.last_name}}</a> on {{post.created_at}} with tags {{post.tags}}</h2>
 <p>{{post.content}}</p>
 <a href="/">
     <button>Back</button>
